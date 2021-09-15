@@ -1,6 +1,19 @@
 const { body } = require("express-validator");
+const User = require("../models/user");
 exports.registerValidators = [
-  body("email").isEmail().withMessage("E-mail is not valid"),
+  body("email")
+    .isEmail()
+    .withMessage("E-mail is not valid")
+    .custom(async (value, { req }) => {
+      try {
+        const user = await User.findOne({ email: value });
+        if (user) {
+          return Promise.reject("User with this email already exists");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }),
   body("password", "Password should be 6 symbols minimum")
     .isLength({
       min: 6,
