@@ -1,0 +1,42 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Express with Artur</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{#if isHome}}
+        <li class="active"><a href="/">Home</a></li>
+      {{else}}
+        <li><a href="/">Home</a></li>
+      {{/if}}
+      {{#if isCourses}}
+        <li class="active"><a href="/courses">Courses</a></li>
+      {{else}}
+        <li><a href="/courses">Courses</a></li>
+      {{/if}}
+      {{#if isAuth}}
+        {{#if isAdd}}
+          <li class="active"><a href="/add">Add Courses</a></li>
+        {{else}}
+          <li><a href="/add">Add Courses</a></li>
+        {{/if}}
+        {{#if isCard}}
+          <li class="active"><a href="/card">Card</a></li>
+        {{else}}
+          <li><a href="/card">Card</a></li>
+        {{/if}}
+        {{#if isOrders}}
+          <li class="active"><a href="/orders">Orders</a></li>
+        {{else}}
+          <li><a href="/orders">Orders</a></li>
+        {{/if}}
+        <li><a href="/auth/logout">Log out</a></li>
+
+      {{else}}
+        {{#if isLogin}}
+          <li class="active"><a href="/auth/login">Enter</a></li>
+        {{else}}
+          <li><a href="/auth/login">Enter</a></li>
+        {{/if}}
+      {{/if}}
+    </ul>
+  </div>
+</nav>
