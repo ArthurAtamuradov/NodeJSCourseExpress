@@ -22,7 +22,9 @@ router.post("/login", loginValidators, async (req, res) => {
       req.flash("loginError", result.array()[0].msg);
       return res.status(422).redirect("/auth/login#login");
     }
+    // console.log(req.body.email);
     const candidate = await User.findOne({ email: req.body.email });
+    // console.log(candidate);
     req.session.isAuthenticated = true;
     req.session.user = candidate;
     req.session.save((err) => {

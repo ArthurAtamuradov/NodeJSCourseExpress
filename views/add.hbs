@@ -1,5 +1,10 @@
+{{#if error}}
+  <p class="alert">
+    {{error}}
+  </p>
+{{/if}}
 <h1>Add New Course</h1>
-<form action="/add" method="POST">
+<form action="/add" method="POST" novalidate>
   <div class="input-field">
     <input
       placeholder="Enter course name"

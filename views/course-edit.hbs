@@ -1,3 +1,6 @@
+{{#if error}}
+  <p class="alert">{{error}}</p>
+{{/if}}
 <h1>Edit {{course.title}} Course</h1>
 <form action="/courses/edit" method="POST" class="courses form">
   <input type="hidden" name="_csrf" value="{{csrf}}" />

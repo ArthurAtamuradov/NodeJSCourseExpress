@@ -22,8 +22,9 @@ router.post("/add", async (req, res) => {
 });
 
 router.get("/", auth, async (req, res) => {
+  // console.log(req.user);
   const user = await req.user.populate("card.items.courseId").execPopulate();
-  // console.log(user)
+
   const courses = mapCardItems(user.card);
   //console.log(courses);
   res.render("card", {

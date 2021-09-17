@@ -53,7 +53,15 @@ exports.loginValidators = [
       } catch (error) {
         console.log(error);
       }
-    })
-    .normalizeEmail(),
+    }),
   body("password").trim(),
+];
+exports.courseValidators = [
+  body("title")
+    .isLength({ min: 3 })
+    .withMessage("Length of title should be 3 characters at least")
+    .trim(),
+  body("price").isNumeric().withMessage("Enter valid price").trim(),
+
+  body("img", "Enter right url for an image").isURL().trim(),
 ];
