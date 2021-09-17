@@ -1,0 +1,39 @@
+<h1>Profile</h1>
+<div class="row">
+  <div class="col s6">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ59nWkaVYc10vhRpLT0UpXaVIOoFDMavopXw&usqp=CAU"
+      alt=""
+    />
+    <p>
+      There is no avatar photo
+    </p>
+  </div>
+  <div class="col s6">
+    <form action="/" method="post">
+      <div class="input-field">
+        <input
+          placeholder="User name"
+          name="name"
+          id="name"
+          type="text"
+          class="validate"
+          required
+          value="{{user.name}}"
+        />
+        <label for="title">User name</label>
+        <span class="helper-text" data-error="Enter user name"></span>
+      </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Avatar photo</span>
+          <input type="file" />
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" />
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
