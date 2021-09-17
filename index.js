@@ -16,6 +16,7 @@ const User = require("./models/user");
 const userMiddleware = require("./middleware/user");
 const session = require("express-session");
 const varMiddleware = require("./middleware/variables");
+const errorHandler = require("./middleware/errorHandler");
 const app = express();
 
 const hbs = exhbs.create({
@@ -57,7 +58,7 @@ app.use("/add", addRoutes);
 app.use("/card", cardRoutes);
 app.use("/orders", ordersRoutes);
 app.use("/auth", authRoutes);
-
+app.use(errorHandler);
 const PORT = process.env.PORT || 3000;
 
 async function start() {
