@@ -18,6 +18,7 @@ const session = require("express-session");
 const varMiddleware = require("./middleware/variables");
 const errorHandler = require("./middleware/errorHandler");
 const profileRoutes = require("./routes/profile");
+const fileMiddleware = require("./middleware/file");
 const app = express();
 
 const hbs = exhbs.create({
@@ -49,6 +50,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(fileMiddleware.single("avatar"));
 app.use(csrf());
 app.use(flash());
 app.use(varMiddleware);

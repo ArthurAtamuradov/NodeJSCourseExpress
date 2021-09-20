@@ -20,6 +20,7 @@
     "express-session": "^1.17.2",
     "express-validator": "^6.12.1",
     "mongoose": "^5.13.7",
+    "multer": "^1.4.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
