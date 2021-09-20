@@ -6,7 +6,6 @@ const auth = require("../middleware/auth");
 const { courseValidators } = require("../tools/validators");
 router.get("/", async (req, res) => {
   const courses = await Course.find().lean();
-  console.log(courses);
   res.render("courses", {
     userId: req.user ? req.user._id.toString() : null,
     courses: courses,

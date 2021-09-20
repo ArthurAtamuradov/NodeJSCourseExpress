@@ -40,7 +40,7 @@ router.post("/login", loginValidators, async (req, res) => {
 });
 router.get("/logout", async (req, res) => {
   // req.session.isAuthenticated = false;
-  console.log("logging out");
+
   await req.session.destroy(() => {
     res.redirect("/auth/login");
   });
